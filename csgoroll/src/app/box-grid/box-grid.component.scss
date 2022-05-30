@@ -1,0 +1,8 @@
+:host {
+  .box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(236px, 1fr));
+    grid-gap: 1.25rem;
+    padding: 1.25rem;
+  }
+}

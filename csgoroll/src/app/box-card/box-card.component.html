@@ -1,0 +1,12 @@
+<div class="box" *ngIf="box">
+  <div class="box-image-container">
+    <img [src]="box.iconUrl" onerror="this.src='assets/logo.png'" alt="box image" />
+  </div>
+  <div class="box-details text-center">
+    <div class="box-name">{{ box.name }}</div>
+    <div class="box-cost"><i class="bi bi-coin"></i> {{ box.cost }}</div>
+    <div class="box-action-btn">
+      <ng-content select="[actionBtn]"></ng-content>
+    </div>
+  </div>
+</div>
