@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  redirectUrl: 'http://localhost:4200',
+  graphQlUrl: 'https://api-staging.csgoroll.com/graphql',
+  authUrl: 'https://api-staging.csgoroll.com/auth/steam'
 };
 
 /*
