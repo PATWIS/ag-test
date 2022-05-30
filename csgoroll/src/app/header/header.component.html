@@ -4,5 +4,12 @@
       <img src="assets/logo.png" />
     </div>
   </div>
-  <button (click)="onLogInClick()" class="btn btn-success">Login</button>
+  <div class="current-user-profile" *ngIf="currentUser$ | async as user; else loginBtn">
+    <cgr-user-balance *ngIf="balance$ | async as balance" [balance]="balance"></cgr-user-balance>
+    {{ user.name }}
+  </div>
+
+  <ng-template #loginBtn
+    ><button (click)="onLogInClick()" class="btn btn-success">Login</button>
+  </ng-template>
 </header>

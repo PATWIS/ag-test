@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   redirectUrl: 'http://localhost:4200',
-  graphQlUrl: 'https://api-staging.csgoroll.com/graphql',
-  authUrl: 'https://api-staging.csgoroll.com/auth/steam'
+  graphQLUrl: 'https://api-staging.csgoroll.com',
+  graphQLWsUrl: 'ws://api-staging.csgoroll.com'
 };
 
 /*
