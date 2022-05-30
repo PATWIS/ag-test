@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
-import { ApolloClientOptions, InMemoryCache, split } from '@apollo/client/core';
+import { split, ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { HttpLink } from 'apollo-angular/http';
-import { environment } from 'src/environments/environment';
-import { getMainDefinition } from '@apollo/client/utilities';
 import { WebSocketLink } from '@apollo/client/link/ws';
+import { getMainDefinition, offsetLimitPagination } from '@apollo/client/utilities';
+import { environment } from 'src/environments/environment';
 
 const uri = `${environment.graphQLUrl}/graphql`; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
@@ -35,8 +35,21 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   );
 
   return {
-    link,
-    cache: new InMemoryCache()
+    link: link,
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            feed: offsetLimitPagination()
+          }
+        }
+      }
+    }),
+    defaultOptions: {
+      watchQuery: {
+        errorPolicy: 'all'
+      }
+    }
   };
 }
 

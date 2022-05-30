@@ -1,19 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Query, gql } from 'apollo-angular';
+import { CurrentUser } from '../models/user';
 
-export interface CurrentUser {
-  id: string;
-  name: string;
-  wallets: Wallet[];
-}
-
-export interface Wallet {
-  id: string;
-  amount: number;
-  currency: string;
-}
-
-export interface CurrentUserQueryResult {
+interface CurrentUserQueryResult {
   currentUser: CurrentUser | null;
 }
 

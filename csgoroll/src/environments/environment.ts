@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   redirectUrl: 'http://localhost:4200',
   graphQLUrl: 'https://api-staging.csgoroll.com',
-  graphQLWsUrl: 'ws://api-staging.csgoroll.com'
+  graphQLWsUrl: 'wss://api-staging.csgoroll.com'
 };
 
 /*

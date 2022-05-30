@@ -12,7 +12,7 @@ interface QueryBoxesResponse {
 export class QueryBoxesGQL extends Query<QueryBoxesResponse> {
   override document = gql`
     query getBoxes {
-      boxes(free: false, purchasable: true, openable: true, first: 50) {
+      boxes(free: false, purchasable: true, openable: true) {
         edges {
           node {
             id

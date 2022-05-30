@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BoxDetailsComponent } from './box-details/box-details.component';
-import { BoxGridComponent } from './box-grid/box-grid.component';
+import { BoxDetailsComponent } from './components/box-details/box-details.component';
+import { BoxGridComponent } from './components/box-grid/box-grid.component';
 
 const routes: Routes = [
   { path: 'boxes', component: BoxGridComponent },

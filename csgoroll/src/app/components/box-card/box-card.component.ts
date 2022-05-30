@@ -8,10 +8,7 @@ import { Box } from 'src/app/models/box';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BoxCardComponent implements OnInit {
-  @Input() box: Box | undefined;
-  @Input() showOpenBtn = false;
-  @Input() showLinkBtn = false;
-
+  @Input() box!: Box;
   constructor() {}
 
   ngOnInit(): void {}

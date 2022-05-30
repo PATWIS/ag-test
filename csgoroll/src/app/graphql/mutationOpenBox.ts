@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { gql, Mutation } from 'apollo-angular';
-import { BoxDetails } from '../models/box';
 import { BoxOpeningResult } from '../models/openBox';
 
 @Injectable({
