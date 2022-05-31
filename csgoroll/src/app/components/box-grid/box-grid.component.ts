@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Box } from 'src/app/models/box';
 import { BoxService } from 'src/app/services/box.service';
 
@@ -12,11 +11,7 @@ import { BoxService } from 'src/app/services/box.service';
 })
 export class BoxGridComponent implements OnInit {
   boxes$: Observable<Box[]> | undefined;
-  constructor(
-    private boxService: BoxService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private boxService: BoxService) {}
 
   ngOnInit(): void {
     this.boxes$ = this.boxService.getBoxes();
@@ -24,9 +19,5 @@ export class BoxGridComponent implements OnInit {
 
   trackById(idx: number, value: Box) {
     return value && value.id;
-  }
-
-  goToBoxDetails(id: string) {
-    this.router.navigate(['/boxes', id], { relativeTo: this.route });
   }
 }
