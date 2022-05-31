@@ -13,15 +13,15 @@ export class HeaderComponent implements OnInit {
   public currentUser$: Observable<CurrentUser | null> | undefined;
   public balance$: Observable<number> | undefined;
   public walletSubs$: Observable<SubscriptionResult<any> | null> | undefined;
-  public show$: Observable<boolean> | undefined;
-  constructor(private authService: UserService) {}
+
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.currentUser$ = this.authService.getCurrentUser();
-    this.balance$ = this.authService.balance$;
+    this.currentUser$ = this.userService.getCurrentUser();
+    this.balance$ = this.userService.balance$;
   }
 
   onLogInClick() {
-    this.authService.login();
+    this.userService.login();
   }
 }
