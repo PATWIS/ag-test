@@ -19,7 +19,7 @@ export class BoxGridComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.boxes$ = this.boxService.getBoxes().pipe(tap((x) => console.log(x)));
+    this.boxes$ = this.boxService.getBoxes();
   }
 
   trackById(idx: number, value: Box) {
